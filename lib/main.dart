@@ -1,3 +1,6 @@
+import 'package:alerta_temprana_scz/Send%20Notification/form_page.dart';
+import 'package:alerta_temprana_scz/pages/login_page.dart';
+import 'package:alerta_temprana_scz/pages/register_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,14 +12,6 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Container( 
-            child: Text("Hola Mundo"),
-          ),
-        ),
-      ),
-    );
+    return MaterialApp(home: FormularioEmergencia());
   }
 }
