@@ -1,7 +1,11 @@
+import 'package:alerta_temprana_scz/pages/show_alerts/implementation_cards/ui/contact_list_page.dart';
+import 'package:alerta_temprana_scz/pages/show_alerts/implementation_cards/ui/widgets/cards.dart';
+import 'package:alerta_temprana_scz/home.dart';
+import 'package:alerta_temprana_scz/home2.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MainPage());
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: const MainPage()));
 }
 
 class MainPage extends StatelessWidget {
@@ -9,14 +13,9 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Container( 
-            child: Text("Hola Mundo"),
-          ),
-        ),
-      ),
-    );
+    List<double> distances = [];
+    return  HomePage2();
   }
 }
+
+
