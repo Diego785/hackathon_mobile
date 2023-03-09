@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:alerta_temprana_scz/modelos/evento.dart';
+import 'package:alerta_temprana_scz/models/eventos.dart';
 import 'package:alerta_temprana_scz/widget/headers.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -20,10 +20,10 @@ class _FormularioEmergenciaState extends State<FormularioEmergencia> {
   bool _veifyVideo = false;
   bool _miubicacion = false;
 
-  List<Evento> eventos = [
-    Evento(id: 1, nombre: 'incendio'),
-    Evento(id: 2, nombre: 'inundacion'),
-    Evento(id: 3, nombre: 'sequia')
+  List<Eventos> eventos = [
+    Eventos(id: 1, nombre: 'incendio'),
+    Eventos(id: 2, nombre: 'inundacion'),
+    Eventos(id: 3, nombre: 'sequia')
   ];
 
   DateTime? _creationDateTime = DateTime.now();

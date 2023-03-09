@@ -1,3 +1,4 @@
+import 'package:alerta_temprana_scz/home2.dart';
 import 'package:alerta_temprana_scz/widget/boton_azul.dart';
 import 'package:alerta_temprana_scz/widget/custom_input.dart';
 import 'package:alerta_temprana_scz/widget/labels.dart';
@@ -97,7 +98,10 @@ class __FormState extends State<_Form> {
           // TODO: Crear button
           BotonAzul(
             buttonText: 'Ingrese',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => HomePage2()));
+            },
           ),
         ],
       ),

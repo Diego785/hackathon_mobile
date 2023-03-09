@@ -1,5 +1,5 @@
-class Evento {
-  Evento({
+class Eventos {
+  Eventos({
     required this.id,
     required this.nombre,
   });
