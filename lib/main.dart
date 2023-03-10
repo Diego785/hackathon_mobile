@@ -1,4 +1,5 @@
 import 'package:alerta_temprana_scz/home2.dart';
+import 'package:alerta_temprana_scz/pages/system/login_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {

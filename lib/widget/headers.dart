@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 class HeaderCuadrado extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -231,7 +229,6 @@ class IconHeader extends StatelessWidget {
   //final IconData icon;
   final String titulo;
   final String? logo;
-  final String? logo2;
   final Color color1;
   final Color color2;
   final double? grosor;
@@ -241,10 +238,9 @@ class IconHeader extends StatelessWidget {
       //required this.icon,
       required this.titulo,
       this.logo,
-      this.logo2,
       this.color1 = Colors.grey,
       this.color2 = Colors.blueGrey,
-      this.grosor = 200});
+      this.grosor = 300});
 
   @override
   Widget build(BuildContext context) {
@@ -255,32 +251,30 @@ class IconHeader extends StatelessWidget {
           color2: this.color2,
           grosor: this.grosor,
         ),
-         logo!= null ?
-         Positioned(
-           left: -80,
-           child: Image.asset(scale: 2.5, this.logo!, color: Colors.white.withOpacity(0.3)),
-         ): SizedBox.shrink(),
+        logo != null
+            ? Positioned(
+                left: -40,
+                top: -20,
+                child: Image.asset(
+                    scale: 1.2,
+                    this.logo!,
+                    color: Colors.white.withOpacity(0.7)),
+              )
+            : SizedBox.shrink(),
         Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            SizedBox(height: 20, width: double.infinity),
+            SizedBox(height: 80, width: double.infinity),
 
-            // const SizedBox(
-            //   width: 300,
-            //   child: Text("Gobierno Autónomo Departamental Santa Cruz",
-            //   maxLines: 2,
-              
-            //   textAlign: TextAlign.center,
-            //       style: const TextStyle(
-            //           fontSize: 25,
-            //           color: Colors.white,
-            //           fontWeight: FontWeight.bold)),
-            // ),
+            Text(this.titulo,
+                style: const TextStyle(
+                    fontSize: 35,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold)),
             SizedBox(height: 20),
             this.logo != null
                 ? Image.asset(
-                    this.logo2!,
-                    scale: 4.0,
+                    this.logo!,
+                    scale: 3,
                   )
                 : SizedBox.shrink(),
             SizedBox(height: 20),
@@ -304,7 +298,7 @@ class _IconHeaderBackground extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 400,
+      height: this.grosor,
       decoration: BoxDecoration(
           // color: Colors.red,
           borderRadius: BorderRadius.only(bottomLeft: Radius.circular(80)),

@@ -1,3 +1,4 @@
+import 'package:alerta_temprana_scz/Send%20Notification/form_page.dart';
 import 'package:alerta_temprana_scz/pages/show_alerts/implementation_cards/ui/contact_list_page.dart';
 import 'package:alerta_temprana_scz/pages/show_alerts/show_categories.dart';
 import 'package:alerta_temprana_scz/widgets/boton_gordo.dart';
@@ -10,20 +11,6 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
-// import 'package:realtime_chat/models/uniqueproducto.dart';
-// import 'package:realtime_chat/pages/Inventory/details_products_page.dart';
-// import 'package:realtime_chat/pages/Inventory/inventory_page.dart';
-// import 'package:realtime_chat/pages/Patients/patient_page.dart';
-// import 'package:realtime_chat/pages/Receta/receta_page.dart';
-// import 'package:realtime_chat/pages/Stock/stock_page.dart';
-// import 'package:realtime_chat/pages/Suppliers/supplier_page.dart';
-// import 'package:realtime_chat/services/Inventory/productos_service.dart';
-// import 'package:realtime_chat/services/System/auth_service.dart';
-// import 'package:realtime_chat/services/System/socket_service.dart';
-
-// import 'package:realtime_chat/widgets/headers.dart';
-// import 'package:realtime_chat/widgets/boton_gordo.dart';
-// import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 class ItemBoton {
   final IconData icon;
@@ -149,7 +136,7 @@ class _HomePage2State extends State<HomePage2> {
               physics: NeverScrollableScrollPhysics(),
               children: <Widget>[
                 SizedBox(
-                  height: 300,
+                  height: MediaQuery.of(context).size.height -800,
                 ),
                 ...itemMap,
                 Center(child: Text("Emergencias Gobernación: 800148139")),
@@ -186,29 +173,32 @@ class _HomePage2State extends State<HomePage2> {
 class _Encabezado extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Stack(
-          children: [
-            IconHeader(
-              titulo: 'Alerta Temprana SCZ',
-              logo: 'imgs/escudo_scz.png',
-              logo2: 'imgs/escudo_scz2.png',
-              color1: Color.fromARGB(255, 49, 184, 31),
-              color2: Color.fromARGB(255, 189, 255, 172),
-              grosor: 400,
-            ),
-          ],
-        ),
-        Positioned(
-            right: 0,
-            top: 45,
-            child: RawMaterialButton(
-                onPressed: () {},
-                shape: CircleBorder(),
-                padding: EdgeInsets.all(15.0),
-                child: FaIcon(FontAwesomeIcons.ellipsisV, color: Colors.white)))
-      ],
+    return SingleChildScrollView(
+      child: Stack(
+        children: <Widget>[
+          Stack(
+            children: [
+              IconHeader(
+                titulo: 'Alerta Temprana SCZ',
+                logo: 'imgs/escudo_scz.png',
+                logo2: 'imgs/escudo_scz2.png',
+                color1: Color.fromARGB(255, 49, 184, 31),
+                color2: Color.fromARGB(255, 189, 255, 172),
+                grosor: MediaQuery.of(context).size.height / 2,
+              ),
+            ],
+          ),
+          Positioned(
+              right: 0,
+              top: 45,
+              child: RawMaterialButton(
+                  onPressed: () {},
+                  shape: CircleBorder(),
+                  padding: EdgeInsets.all(15.0),
+                  child:
+                      FaIcon(FontAwesomeIcons.ellipsisV, color: Colors.white)))
+        ],
+      ),
     );
   }
 }
