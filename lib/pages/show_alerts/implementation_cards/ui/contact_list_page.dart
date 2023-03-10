@@ -5,7 +5,9 @@ import 'package:alerta_temprana_scz/pages/show_alerts/implementation_cards/ui/wi
 import 'package:alerta_temprana_scz/pages/show_alerts/implementation_cards/ui/widgets/perspective_list_view.dart';
 import 'package:alerta_temprana_scz/home.dart';
 import 'package:alerta_temprana_scz/main.dart';
+import 'package:alerta_temprana_scz/services/alertas_service.dart';
 import 'package:flutter/material.dart';
+
 // import 'package:trip_planner/implementation_cards/ui/contact_detail_screen.dart';
 // import 'package:trip_planner/implementation_cards/ui/widgets/cards.dart';
 // import 'package:trip_planner/implementation_cards/ui/widgets/perspective_list_view.dart';
@@ -13,15 +15,25 @@ import 'package:flutter/material.dart';
 // import 'package:trip_planner/widgets/my_searching_drawer.dart';
 
 class MicrosListPage extends StatefulWidget {
-  const MicrosListPage({super.key});
-
+  const MicrosListPage({required this.nombreEvento, super.key});
+  final String nombreEvento;
   @override
   MicrosListPageState createState() => MicrosListPageState();
 }
 
 class MicrosListPageState extends State<MicrosListPage> {
+  // final alertaService = AlertasServices();
+
+  // void _loadData() async {
+  //   // alertas = await AlertasServices().getAlerts(widget.nombreEvento);
+  //   print(alertas);
+  //   setState(() {});
+  // }
+
   @override
   void initState() {
+    // _loadData();
+    print(alertas);
     super.initState();
   }
 
@@ -60,8 +72,9 @@ class MicrosListPageState extends State<MicrosListPage> {
           // );
         },
         children: List.generate(alertas.length, (index) {
-    
-          return MicrosCard(alert: alertas[index],);
+          return MicrosCard(
+            alert: alertas[index],
+          );
         }),
       ),
       //---------------------------------------

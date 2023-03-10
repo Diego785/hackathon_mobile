@@ -108,8 +108,9 @@ class _CategoriesPageState extends State<CategoriesPage> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) =>
-                                              MicrosListPage()));
+                                          builder: (context) => MicrosListPage(
+                                              nombreEvento:
+                                                  eventos[index2].nombre)));
                                 },
                                 child: Container(
                                   height: 140,
@@ -119,8 +120,8 @@ class _CategoriesPageState extends State<CategoriesPage> {
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(15),
                                     image: DecorationImage(
-                                      image: AssetImage(
-                                          eventos[index2].foto.path),
+                                      image:
+                                          AssetImage(eventos[index2].foto.path),
                                       fit: BoxFit.cover,
                                     ),
                                   ),

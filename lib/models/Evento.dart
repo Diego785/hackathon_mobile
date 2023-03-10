@@ -1,8 +1,8 @@
 import 'package:alerta_temprana_scz/models/Foto.dart';
 
 class Evento {
-  int id;
-  String nombre;
+  final int id;
+  final String nombre;
   FotoIncidente foto;
   Evento({required this.id, required this.nombre, required this.foto});
 }

@@ -7,11 +7,11 @@ void main() {
 }
 
 class TemplateGalleryApp extends StatelessWidget {
- // const TemplateGalleryApp({super.key});
+  // const TemplateGalleryApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-  List<double> distances=[];
+    List<double> distances = [];
     return Theme(
       data: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: const Color(0xff23202a),
@@ -27,7 +27,8 @@ class TemplateGalleryApp extends StatelessWidget {
         ),
         iconTheme: const IconThemeData(color: Colors.grey),
       ),
-      child:  MicrosListPage(),
+      child: SizedBox.shrink(),
+      // child:  MicrosListPage(),
     );
   }
 }

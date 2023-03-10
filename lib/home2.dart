@@ -40,6 +40,16 @@ class HomePage2 extends StatefulWidget {
   State<HomePage2> createState() => _HomePage2State();
 }
 
+// _launchURL() async {
+//   const url =
+//       'diegohurtado2412@gmail.com?subject=Testing&body=MyNewNotificationTesting';
+//   if (await canLaunch(url)) {
+//     await launch(url);
+//   } else {
+//     throw 'Could not launch $url';
+//   }
+// }
+
 class _HomePage2State extends State<HomePage2> {
   static const IconData copyright =
       IconData(0xe198, fontFamily: 'MaterialIcons');
@@ -57,8 +67,8 @@ class _HomePage2State extends State<HomePage2> {
       ItemBoton(
         Icons.notification_add,
         'Enviar Alerta',
-        Color(0xff66A9F2),
-        Color(0xff536CF6),
+        Colors.yellow.shade700,
+        Colors.yellowAccent,
         () {},
       ),
       // ItemBoton(
@@ -96,6 +106,13 @@ class _HomePage2State extends State<HomePage2> {
         Colors.green.shade400,
         () {},
       ),
+      ItemBoton(
+        Icons.mail,
+        'Difundir',
+        Colors.grey.shade800,
+        Colors.grey.shade400,
+        () {},
+      ),
       // new ItemBoton(FontAwesomeIcons.biking, 'Awards', Color(0xff317183),
       //     Color(0xff46997D)),
       // new ItemBoton(FontAwesomeIcons.carCrash, 'Motor Accident',
@@ -127,7 +144,7 @@ class _HomePage2State extends State<HomePage2> {
         children: [
           _Encabezado(),
           Container(
-            margin: EdgeInsets.only(top: 200),
+            margin: EdgeInsets.only(top: 100),
             child: ListView(
               physics: NeverScrollableScrollPhysics(),
               children: <Widget>[
